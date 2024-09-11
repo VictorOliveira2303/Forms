@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+.exo-2-uniquifier {
+  font-family: "Exo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+body{
+    background-image: url(https://img.freepik.com/fotos-gratis/postura-plana-da-estacao-de-trabalho-com-espaco-de-copia-e-laptop_23-2148430879.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+label{
+    font-weight: bold;
+    color: black;
+    margin-bottom: 8px;
+}
+input[type="text"], select {
+    width: 100%;
+    border: 1px solid #FFFF;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+h1{
+    text-align: center;
+    margin-bottom: 30px;
+}
+input[type="text"]:focus, select:focus {
+    border-color: #0056b3;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.2);
+}
+.container{
+    background-color: rgba(0, 87, 179, 0.771);
+    padding: 30px;
+    border-radius: 10px;
+    width: 500px;
+    height: 580px;
+}
+button{
+    background-color: #0056b3;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: center;
+}
+button:hover {
+    background-color: #004494;
+    transform: scale(1.05);
+}

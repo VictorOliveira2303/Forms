@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"/>
+      <link rel="shortcut icon" href="favicon2.png" type="image/x-icon">
+    <title>Formulário de Inscrição</title>
+  </head>
+  <body>
+    <main>
+        <div class="container">
+            <h1>FORMULÁRIO DE INSCRIÇÃO</h1>
+            <form action="" method="get">
+              <label for="">Nome</label>
+              <input type="text" id="nome" name="nome" required>
+              <label for="">Telefone</label>
+              <input type="text" id="telefone" name="Telefone" required>
+              <label for="">CEP</label>
+              <input type="text"  onblur="Coletar()" id="cep" name="cep"  required>
+              <label for="">Endereço</label>
+              <input type="text" id="endereço" name="endereço" required>
+              <label for="">Bairro</label>
+              <input type="text" id="bairro" name="bairro" required>
+              <label for="">Cidade</label>
+              <input type="text" id="cidade" name="cidade" required>
+              <!-- Seleção de cursos -->
+              <label for="">Cursos Profissionalizantes</label>
+              <select name="cursos" id="cursos">
+                <option value="curso1">Informática Básica</option>
+                <option value="curso2">Mecânico de Motocicletas</option>
+                <option value="curso3">Desenvolvedor de Sistemas</option>
+                <option value="curso4">Eletricista Predial</option>
+              </select>
+              <br/><br/>
+              <!-- Genero Radio Button -->
+              <label for="">Sexo</label><br/>
+              <input type="radio" id="masculino" name="sexo" value="masculino" required>
+              <label for="masculino">Masculino</label>
+              <input type="radio" id="feminino" name="sexo" value="feminino" required>
+              <label for="feminino">Feminio</label><br><br>
+              <!-- Adcionar caixas de seleção -->
+              <label for="">Unidade Operacional</label><br>
+              <input type="checkbox" id="cetcc" name="cursos" value="CETCC"/>
+              <label for="cetcc">CETCC</label>
+              <input type="checkbox" id="cetafaju" name="cursos" value="CETAFAJU"/>
+              <label for="cetafaju">CETAFAJU</label>
+              <input type="checkbox" id="cetafest" name="cursos" value="CETAFEST"/>
+              <label for="cetafest">CETAFEST</label>
+              <input type="checkbox" id="ceticc" name="cursos" value="CETICC"/>
+              <label for="ceticc">CETICC</label><br><br>
+              <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,67 +1,354 @@
-*{
+
+/* ===== Variáveis ===== */
+:root {
+    --fundo: #121212;
+    --superficie: #1c1c22;
+    --superficie-clara: #25252d;
+    --azul: #0077ff;
+    --azul-claro: #00b7ff;
+    --texto: #f2f2f2;
+    --texto-suave: #b8b8c0;
+    --borda: #ffffff1d;
+    --sucesso: #42d392;
+    --erro: #ff6b6b;
+}
+
+/* ===== Reset ===== */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Exo 2', sans-serif;
-    font-weight: 800;
-    font-style: normal;
 }
-.exo-2-uniquifier {
-  font-family: "Exo 2", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: weight;
-  font-style: normal;
-}
-body{
-    background-image: url(https://img.freepik.com/fotos-gratis/postura-plana-da-estacao-de-trabalho-com-espaco-de-copia-e-laptop_23-2148430879.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-    width: 100vw;
+
+body {
+    min-height: 100vh;
+    padding: 40px 20px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
+    font-family: 'Exo 2', sans-serif;
+    color: var(--texto);
+
+    background:
+        linear-gradient(rgba(18, 18, 18, 0.90), rgba(18, 18, 18, 0.95)),
+        url("https://img.freepik.com/fotos-gratis/postura-plana-da-estacao-de-trabalho-com-espaco-de-copia-e-laptop_23-2148430879.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
-label{
-    font-weight: bold;
-    color: black;
-    margin-bottom: 8px;
-}
-input[type="text"], select {
+
+/* ===== Container ===== */
+.container {
     width: 100%;
-    border: 1px solid #FFFF;
-    border-radius: 5px;
-    font-size: 16px;
-    box-sizing: border-box;
+    max-width: 620px;
+
+    padding: 40px;
+
+    background: rgba(28, 28, 34, 0.96);
+
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+
+    animation: aparecer 0.6s ease;
 }
-h1{
+
+/* ===== Cabeçalho ===== */
+.form-header {
+    margin-bottom: 35px;
     text-align: center;
+}
+
+.form-tag {
+    display: inline-block;
+
+    margin-bottom: 12px;
+    padding: 7px 13px;
+
+    color: var(--azul-claro);
+    background: rgba(0, 119, 255, 0.12);
+
+    border: 1px solid rgba(0, 119, 255, 0.2);
+    border-radius: 30px;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.form-header h1 {
+    margin-bottom: 10px;
+
+    color: var(--texto);
+
+    font-size: 28px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.form-header p {
+    color: var(--texto-suave);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* ===== Seções ===== */
+.form-section {
     margin-bottom: 30px;
 }
-input[type="text"]:focus, select:focus {
-    border-color: #0056b3;
+
+.form-section h2 {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+
+    color: var(--azul-claro);
+
+    border-bottom: 1px solid var(--borda);
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+/* ===== Campos ===== */
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 18px;
+}
+
+.form-group label,
+.form-group legend {
+    margin-bottom: 8px;
+
+    color: var(--texto);
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+input[type="text"],
+input[type="tel"],
+select {
+    width: 100%;
+    height: 46px;
+
+    padding: 0 14px;
+
+    color: var(--texto);
+    background: var(--superficie-clara);
+
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+
     outline: none;
-    box-shadow: 0 0 5px rgba(0, 86, 179, 0.2);
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.25s ease;
 }
-.container{
-    background-color: rgba(0, 87, 179, 0.771);
-    padding: 30px;
-    border-radius: 10px;
-    width: 500px;
-    height: 580px;
+
+input::placeholder {
+    color: #85858f;
+    font-weight: 400;
 }
-button{
-    background-color: #0056b3;
-    color: white;
-    padding: 12px;
+
+select option {
+    color: var(--texto);
+    background: var(--superficie);
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+select:focus {
+    border-color: var(--azul);
+    background: #292933;
+
+    box-shadow: 0 0 0 3px rgba(0, 119, 255, 0.16);
+}
+
+/* ===== Linha de campos ===== */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* ===== Radio e Checkbox ===== */
+fieldset.form-group {
+    min-width: 0;
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    align-self: center;
 }
-button:hover {
-    background-color: #004494;
-    transform: scale(1.05);
+
+.form-group legend {
+    margin-bottom: 12px;
+}
+
+.options-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    color: var(--texto-suave) !important;
+
+    font-size: 14px;
+    font-weight: 500 !important;
+
+    cursor: pointer;
+}
+
+.option input {
+    width: 16px;
+    height: 16px;
+
+    accent-color: var(--azul);
+
+    cursor: pointer;
+}
+
+/* ===== Mensagens ===== */
+.form-message {
+    display: block;
+    margin-top: 7px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.form-message.success {
+    color: var(--sucesso);
+}
+
+.form-message.error {
+    color: var(--erro);
+}
+
+/* ===== Botão ===== */
+.submit-button {
+    width: 100%;
+    min-height: 50px;
+
+    margin-top: 5px;
+
+    color: var(--texto);
+
+    background: linear-gradient(
+        135deg,
+        var(--azul),
+        var(--azul-claro)
+    );
+
+    border: none;
+    border-radius: 9px;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.submit-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 25px rgba(0, 119, 255, 0.3);
+}
+
+.submit-button:active {
+    transform: scale(0.98);
+}
+
+.submit-button:focus-visible {
+    outline: 3px solid rgba(0, 183, 255, 0.4);
+    outline-offset: 3px;
+}
+
+/* ===== Rodapé ===== */
+.form-footer {
+    margin-top: 25px;
+    padding-top: 18px;
+
+    border-top: 1px solid var(--borda);
+
+    text-align: center;
+}
+
+.form-footer p {
+    color: var(--texto-suave);
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* ===== Animação ===== */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 600px) {
+    body {
+        padding: 20px 12px;
+        background-attachment: scroll;
+    }
+
+    .container {
+        padding: 28px 20px;
+        border-radius: 14px;
+    }
+
+    .form-header h1 {
+        font-size: 23px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .options-group {
+        gap: 14px;
+    }
+}
+
+@media (max-width: 360px) {
+    .container {
+        padding: 24px 15px;
+    }
+
+    .form-header h1 {
+        font-size: 20px;
+    }
+}
+
+/* ===== Acessibilidade ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
 }

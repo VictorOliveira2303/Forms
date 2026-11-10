@@ -1,63 +1,226 @@
+
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"/>
-      <link rel="shortcut icon" href="favicon2.png" type="image/x-icon">
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Formulário de inscrição em cursos profissionalizantes.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="favicon2.png" type="image/x-icon">
+
     <title>Formulário de Inscrição</title>
-  </head>
-  <body>
-    <main>
-        <div class="container">
-            <h1>FORMULÁRIO DE INSCRIÇÃO</h1>
-            <form action="" method="get">
-              <label for="">Nome</label>
-              <input type="text" id="nome" name="nome" required>
-              <label for="">Telefone</label>
-              <input type="text" id="telefone" name="Telefone" required>
-              <label for="">CEP</label>
-              <input type="text"  onblur="Coletar()" id="cep" name="cep"  required>
-              <label for="">Endereço</label>
-              <input type="text" id="endereço" name="endereço" required>
-              <label for="">Bairro</label>
-              <input type="text" id="bairro" name="bairro" required>
-              <label for="">Cidade</label>
-              <input type="text" id="cidade" name="cidade" required>
-              <!-- Seleção de cursos -->
-              <label for="">Cursos Profissionalizantes</label>
-              <select name="cursos" id="cursos">
-                <option value="curso1">Informática Básica</option>
-                <option value="curso2">Mecânico de Motocicletas</option>
-                <option value="curso3">Desenvolvedor de Sistemas</option>
-                <option value="curso4">Eletricista Predial</option>
-              </select>
-              <br/><br/>
-              <!-- Genero Radio Button -->
-              <label for="">Sexo</label><br/>
-              <input type="radio" id="masculino" name="sexo" value="masculino" required>
-              <label for="masculino">Masculino</label>
-              <input type="radio" id="feminino" name="sexo" value="feminino" required>
-              <label for="feminino">Feminio</label><br><br>
-              <!-- Adcionar caixas de seleção -->
-              <label for="">Unidade Operacional</label><br>
-              <input type="checkbox" id="cetcc" name="cursos" value="CETCC"/>
-              <label for="cetcc">CETCC</label>
-              <input type="checkbox" id="cetafaju" name="cursos" value="CETAFAJU"/>
-              <label for="cetafaju">CETAFAJU</label>
-              <input type="checkbox" id="cetafest" name="cursos" value="CETAFEST"/>
-              <label for="cetafest">CETAFEST</label>
-              <input type="checkbox" id="ceticc" name="cursos" value="CETICC"/>
-              <label for="ceticc">CETICC</label><br><br>
-              <button type="submit">Enviar</button>
-            </form>
-        </div>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header class="form-header">
+            <span class="form-tag">CURSOS PROFISSIONALIZANTES</span>
+
+            <h1>Formulário de Inscrição</h1>
+
+            <p>Preencha seus dados para realizar sua inscrição.</p>
+        </header>
+
+        <form id="formulario" action="" method="post">
+
+            <!-- Dados pessoais -->
+            <section class="form-section">
+
+                <h2>Dados pessoais</h2>
+
+                <div class="form-group">
+                    <label for="nome">Nome completo</label>
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        placeholder="Digite seu nome completo"
+                        autocomplete="name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="telefone">Telefone</label>
+                    <input
+                        type="tel"
+                        id="telefone"
+                        name="telefone"
+                        placeholder="(00) 00000-0000"
+                        autocomplete="tel"
+                        inputmode="tel"
+                        required
+                    >
+                </div>
+
+            </section>
+
+            <!-- Endereço -->
+            <section class="form-section">
+
+                <h2>Endereço</h2>
+
+                <div class="form-group">
+                    <label for="cep">CEP</label>
+                    <input
+                        type="text"
+                        id="cep"
+                        name="cep"
+                        placeholder="00000-000"
+                        maxlength="9"
+                        inputmode="numeric"
+                        autocomplete="postal-code"
+                        required
+                    >
+
+                    <small id="mensagem-cep" class="form-message" aria-live="polite"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="endereco">Endereço</label>
+                    <input
+                        type="text"
+                        id="endereco"
+                        name="endereco"
+                        placeholder="Rua, avenida..."
+                        autocomplete="street-address"
+                        required
+                    >
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="bairro">Bairro</label>
+                        <input
+                            type="text"
+                            id="bairro"
+                            name="bairro"
+                            placeholder="Seu bairro"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cidade">Cidade</label>
+                        <input
+                            type="text"
+                            id="cidade"
+                            name="cidade"
+                            placeholder="Sua cidade"
+                            autocomplete="address-level2"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Informações da inscrição -->
+            <section class="form-section">
+
+                <h2>Informações da inscrição</h2>
+
+                <div class="form-group">
+                    <label for="curso">Curso profissionalizante</label>
+
+                    <select id="curso" name="curso" required>
+                        <option value="" disabled selected>Selecione um curso</option>
+                        <option value="Informática Básica">Informática Básica</option>
+                        <option value="Mecânico de Motocicletas">Mecânico de Motocicletas</option>
+                        <option value="Desenvolvedor de Sistemas">Desenvolvedor de Sistemas</option>
+                        <option value="Eletricista Predial">Eletricista Predial</option>
+                    </select>
+                </div>
+
+                <fieldset class="form-group">
+
+                    <legend>Sexo</legend>
+
+                    <div class="options-group">
+
+                        <label class="option">
+                            <input
+                                type="radio"
+                                name="sexo"
+                                value="Masculino"
+                                required
+                            >
+                            Masculino
+                        </label>
+
+                        <label class="option">
+                            <input
+                                type="radio"
+                                name="sexo"
+                                value="Feminino"
+                                required
+                            >
+                            Feminino
+                        </label>
+
+                    </div>
+
+                </fieldset>
+
+                <fieldset class="form-group">
+
+                    <legend>Unidade operacional</legend>
+
+                    <div class="options-group">
+
+                        <label class="option">
+                            <input type="checkbox" name="unidades" value="CETCC">
+                            CETCC
+                        </label>
+
+                        <label class="option">
+                            <input type="checkbox" name="unidades" value="CETAFAJU">
+                            CETAFAJU
+                        </label>
+
+                        <label class="option">
+                            <input type="checkbox" name="unidades" value="CETAFEST">
+                            CETAFEST
+                        </label>
+
+                        <label class="option">
+                            <input type="checkbox" name="unidades" value="CETICC">
+                            CETICC
+                        </label>
+
+                    </div>
+
+                </fieldset>
+
+            </section>
+
+            <button type="submit" class="submit-button">
+                Enviar inscrição
+            </button>
+
+            <p id="mensagem-formulario" class="form-message" aria-live="polite"></p>
+
+        </form>
+
+        <footer class="form-footer">
+            <p>Invista no seu futuro. Comece pela sua formação.</p>
+        </footer>
+
     </main>
+
     <script src="main.js"></script>
-  </body>
+
+</body>
 </html>
